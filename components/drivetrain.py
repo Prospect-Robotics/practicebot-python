@@ -1,13 +1,14 @@
 import wpilib
+import rev
 
 #MotorType = wpilib.RobotDrive.MotorType
 #del wpilib.RobotDrive.MotorType # having nested classes present messes up variable injection.
 
 class DriveTrain(wpilib.RobotDrive):
-    lf : wpilib.Talon
-    rf : wpilib.Talon
-    lr : wpilib.Talon
-    rr : wpilib.Talon
+    lf : rev.CANSparkMax
+    rf : rev.CANSparkMax
+    lr : rev.CANSparkMax
+    rr : rev.CANSparkMax
     joystick : wpilib.Joystick
     
     MotorType = None

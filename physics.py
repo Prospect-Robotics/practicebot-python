@@ -27,10 +27,10 @@ class PhysicsEngine(object):
             
     def update_sim(self, hal_data, now, tm_diff):
         
-        lf = hal_data['pwm'][0]['value']
-        lr = hal_data['pwm'][1]['value']
-        rf = hal_data['pwm'][2]['value']
-        rr = hal_data['pwm'][3]['value']
+        lf = hal_data['CAN']['sparkmax-0']['value']
+        lr = hal_data['CAN']['sparkmax-1']['value']
+        rf = hal_data['CAN']['sparkmax-2']['value']
+        rr = hal_data['CAN']['sparkmax-3']['value']
         
         y, angle = self.drivetrain.get_vector(lr, rr, lf, rf)
         self.physics_controller.drive(y, angle, tm_diff)
